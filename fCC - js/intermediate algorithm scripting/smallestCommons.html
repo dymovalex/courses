@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23];
+
+function searchPrimes(num){
+    let n = [0, 0, 0, 0,  0,  0,  0,  0,  0];
+    function search(num){
+        if(num === 1){
+            return n;
+        } else {
+            for(let j = 0; j < primes.length; j++){
+                if(num % primes[j] === 0){
+                    n[j]++;
+                    if(num / primes[j] === 1){
+                        return n;
+                    } else {
+                        num = num / primes[j];
+                        return search(num);
+                    }
+                } else {
+                    continue;
+                }
+            }
+        }
+        
+    }
+    return search(num); 
+}
+
+function smallestCommons(arr) {
+    arr.sort((a, b) => a - b);
+    for(let i = arr[0], j = 1; i < arr[arr.length - 1] - 1; i++, j++){
+        arr.splice(j, 0, i + 1);
+    }
+
+    
+    //return arr.map(a => searchPrimes(a));
+    let res = arr.map(a => searchPrimes(a));
+    let transpose = matrix => matrix[0].map((col, i) => matrix.map(row => row[i]));
+    let mat = transpose(res);
+    
+    let nA = [];
+    for (let i = 0; i < mat.length; i++) {
+        let max = 0;
+        for(let j = 0; j < mat[i].length; j++){
+            if(mat[i][j] >= max){
+                max = mat[i][j];
+            }
+        }
+        nA.push(max);
+    }
+    //return nA;
+    let final = [];
+    for (let i = 0; i < nA.length; i++) {
+        final.push(Math.pow(primes[i], nA[i]));
+    }
+    return final.reduce((a,b) => a * b);
+}
+
+console.log(smallestCommons([1, 5])); //60
+console.log(smallestCommons([18, 23])); // 6056820
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+
+    const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23];
+    
+    function searchPrimes(num){
+        let n = [0, 0, 0, 0,  0,  0,  0,  0,  0];
+        function search(num){
+            for(let j = 0; j < primes.length; j++){
+                if(num % primes[j] === 0){
+                    n[j]++;
+                    if(num / primes[j] === 1){
+                        return n;
+                    } else {
+                        num = num / primes[j];
+                        return search(num);
+                    }
+                } else {
+                    continue;
+                }
+            }
+        }
+        return search(num);
+        
+    }
+
+    console.log(searchPrimes(9));
+
+    </script>
+</body>
+</html>

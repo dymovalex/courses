@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	function convertHTML(str) {
+		const data = { "&": "&amp;",
+					"<": "&lt;",
+					">": "&gt;",
+					'"': "&quot;",
+					"'": "&apos;"};
+		return str.replace(/[&<>"']/g, function(match){
+			return data[match];
+
+		});
+	}
+
+	console.log(convertHTML("Dolce & Gabbana")); //
+
+	</script>
+</body>
+</html>

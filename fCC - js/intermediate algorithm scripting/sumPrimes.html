@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	function sumPrimes(num) {
+		let arr = [];
+		for(let i = 2; i <= num; i++){
+			arr.push([i, true]);
+		}
+		for(let i = arr[0][0]; i * i <= num; i++){
+			if(arr[i-2][1] == true){
+				for (let j = i * i; j <= num; j += i) {
+					arr[j-2][1] = false;
+				}
+			}
+		}
+
+		return arr.filter(a => a[1] === true).map(a => a[0]).reduce((a, b) => a + b);
+	}
+
+	console.log(sumPrimes(977));
+
+	</script>
+</body>
+</html>

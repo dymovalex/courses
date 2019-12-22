@@ -1,0 +1,319 @@
+цвет
+<h1 style="color: blue;"></h1>
+
+отдельный блок:
+<style>
+  h2 {
+    color: red;
+  }
+</style>
+
+class задаётся в тегах html, в style записывается через точку имя класса и его описание, id через #
+
+font-size - размер шрифта
+	px - пиксели
+
+font-family - тип шрифта (serif, sans-serif, monospace)
+	font-family: FAMILY_NAME, GENERIC_NAME; GENERIC_NAME - если основной не работает
+	пример ссылки на шрифты google: <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+width ширина изображения
+	px
+
+border границы вокруг элементов
+	border-color
+	border-width
+	border-style (solid)
+	border-radius (в пикеселях, в процентах - 50% круг)
+
+	Remember that you can apply multiple classes to an element using its class attribute, by separating each class name with a space (class="class1 class2")
+
+background-color - задник элемента div
+
+id
+	An id also has a higher specificity (importance) than a class so if both are applied to the same element and have conflicting styles, the styles of the id will be applied.
+
+	Note that inside your style element, you always reference classes by putting a . in front of their names. You always reference ids by putting a # in front of their names.
+
+padding, margin, and border
+	An element's padding controls the amount of space between the element's content and its border.
+	An element's margin controls the amount of space between an element's border and surrounding elements.
+
+	padding-top
+	padding-right
+	padding-bottom
+	padding-left
+		clockwise notation: paddin: top right bottom left;
+
+	px, может иметь отрицательное значение
+
+	margin-top: 40px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    	можно записать так: margin: 40px 20px 20px 40px;
+
+ class, id are the selectors
+ 	there is [attr=value]
+ 	example:
+ 	[type='radio'] {
+  		margin: 20px 0px 20px 0px;
+	}
+
+mm - absolute unit
+Relative units, such as em or rem, are relative to another length value. For example, em is based on the size of an element's font. If you use it to set the font-size property itself, it's relative to the parent's font-size.
+
+атрибут < class < id < inline styles < keyword !important
+	example: .pink-text {
+    color: pink !important;}
+
+ цвет в 16-ичной системе
+ 	two each for the red (R), green (G), and blue (B) components. For example, #000000 - black color
+	Dodger Blue	#1E90FF
+	Green	#00FF00
+	Orange	#FFA500
+	Red	#FF0000
+
+	Color	Short Hex Code
+	Cyan	#0FF
+	Green	#0F0
+	Red	    #F00
+	Fuchsia	#F0F
+
+rgb
+	rgb(0, 0, 0)
+	rgb(255, 255, 255)
+
+переменные в CSS
+	--variable-name: value;
+	использование: background: var(--penguin-skin) Допускается через запятую добавить значение по умолчанию
+
+:root - псевдо-класс, для записи глобальных переменных.
+	Если записать в другом классе переменную с тем же именем - она перезапишется
+
+  @media - медиазапросы
+  	Медиазапросы используются в тех случаях , когда нужно применить разные css стили, для разных устройств по типу отображения (например: для принтера, монитора или смартфона), а также конкретных характеристик устройства  (например: ширины окна просмотра браузера), или внешней среды (например: внешнее освещение). Учитывая огромное количество подключаемых к интернету устройств, медиазапросы являются очень важным инструментов при создании веб-сайтов и приложений, которые будут правильно работать на всех доступных устройствах, которые  есть у Ваших пользователей.
+
+text-align - группировка текста
+	justify - по ширине
+	center
+	right
+	left (the default)
+
+width - ширина элемента
+
+height - высота элемента
+
+<strong></strong> - жирный шрифт (в CSS это представляется как font-weight: bold)
+<u></u> - подчёркнутый (text-decoration: underline)
+<em></em> - курсив(font-style: italic)
+<s></s> - зачёркнутый (text-decoration: line-through)
+
+rgba()
+	a - прозрачностью от 0 до 1
+
+box-shadow - тень вокруг элемента
+	offset-x (how far to push the shadow horizontally from the element),
+	offset-y (how far to push the shadow vertically from the element),
+	blur-radius,
+	spread-radius and
+	color, in that order.
+	The blur-radius and spread-radius values are optional.
+
+opacity - непрозрачность
+
+text-transform - изменение текста
+	Value			Result
+	lowercase	"transform me"
+	uppercase	"TRANSFORM ME"
+	capitalize	"Transform Me"
+	initial		Use the default value
+	inherit		Use the text-transform value from the parent element
+	none		Default: Use the original text
+
+font-weight - толщина шрифта (измеряется в 100...1000?)
+
+line-height - межстрочный интервал
+
+:hover - псевдокласс - смена цвета при наведении курсора
+
+position: relative; - относительное смещение позиции элемента относительно normal flow страницы. Не меняет структуры html
+	если задать смещение влево - сдвинется относительно вправо, вверх-вниз и т.д.
+
+position: absolute; - абслютное положение относительно родительского элемента. Нюанс: элемент будет заблокирован относительно ближайшего родительского элемента. Родительский элемент необходимо делать relative, по умолчанию это body
+
+position: fixed - фиксация относительно окна браузера. При скролле пользователем не будет перемещаться.
+
+float - смещение лево-право
+
+z-index - если перекрытие слоёв, позволяет выбрать какой будет выше. Чем выше целое число, тем выше
+
+margin: auto; - строчный элемент размещается посередине по горизонтали
+
+Complementary Colors - при наложении эти цвета исключают друг друга, цвет становится серым
+	red (#FF0000) and cyan (#00FFFF)
+	green (#00FF00) and magenta (#FF00FF)
+	blue (#0000FF) and yellow (#FFFF00)
+
+третичные цвета
+	For example, within the RGB color model, red (primary) and yellow (secondary) make orange (tertiary)
+	Color		Hex Code
+	orange		#FF7F00
+	cyan		#00FFFF
+	raspberry	#FF007F
+
+hsl(0-360, 0-100%, 0-100%) - ещё один способ выбирать цвет
+	Hue is what people generally think of as 'color'. If you picture a spectrum of colors starting with red on the left, moving through green in the middle, and blue on right, the hue is where a color fits along this line. In hsl(), hue uses a color wheel concept instead of the spectrum, where the angle of the color on the circle is given as a value between 0 and 360.
+	Saturation is the amount of gray in a color. A fully saturated color has no gray in it, and a minimally saturated color is almost completely gray. This is given as a percentage with 100% being fully saturated.
+	Lightness is the amount of white or black in a color. A percentage is given ranging from 0% (black) to 100% (white), where 50% is the normal color.
+
+background-color по умолчанию имеет значение transparent
+
+background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...); - градиент
+
+background: repeating-linear-gradient() - повторяющиеся полосы
+
+background: url() - ссылка на паттерн
+
+transform: scale(); - масштабирование элемента
+	можно использовать с псевдо-классом :hover
+
+transform: skewX() - скос относительно оси Х
+transform: skewY() - скос относительно оси Y
+
+::before and ::after pseudo-elements. These pseudo-elements are used to add something before or after a selected element
+	For the ::before and ::after pseudo-elements to function properly, they must have a defined content property. This property is usually used to add things like a photo or text to the selected element. When the ::before and ::after pseudo-elements are used to make shapes, the content property is still required, but it's set to an empty string.
+
+@keyframes - описывает, что должно происходить в анимации
+	свойства:
+	animation-name
+	animation-duration
+	animation-iteration-count (можно задать значение infinite)
+	animation-timing-function - функция изменения скорости анимации
+		ease - starts slow, speeds up in the middle, and then slows down again in the end (default)
+		ease-out -  quick in the beginning then slows down (nimation-timing-function: cubic-bezier(0, 0, 0.58, 1);)
+		ease-in - slow in the beginning, then speeds up at the end
+		linear - applies a constant animation speed throughout
+		cubic-bezier(x1, y1, x2, y2) - скорость с использованием кривых Безье (координаты начала 0.0 и конца 1.1 заданы)
+			cubic-bezier(0.3, 0.4, 0.5, 1.6); - мячик
+
+	работает с :hover - необходимо указать состояние только на 100%
+
+	animation-fill-mode: forwards; - анимация остановится в финальной точке
+
+	opacity - замутнение
+
+
+Introduction to the Applied Accessibility
+	- have well-organized code that uses appropriate markup
+	- ensure text alternatives exist for non-text and visual content
+	- create an easily-navigated page that's keyboard-friendly
+
+@media - медиа-запросы. Применение стилей в зависимости от парметров экрана пользователя
+	(max-width: 100px)
+
+img {
+  max-width: 100%; - изображение на ширину его оригинального размера
+  display: block; - замена inline, который по умолчанию, на block
+  height: auto; - чтобы высота не сжималась, а подстраивалась под пропорции оригинала
+}
+
+для отображения изображений на Ретина-экранах, чтобы не было видно пиксельности, задают вручную размеры изображения в 2 раза меньше, чем на самом деле
+
+размеры можно задавать (окно просмотра -viewport)
+	vw (viewport width): 10vw would be 10% of the viewport's width.
+	vh (viewport height): 3vh would be 3% of the viewport's height.
+	vmin (viewport minimum): 70vmin would be 70% of the viewport's smaller dimension (height or width).
+	vmax (viewport maximum): 100vmax would be 100% of the viewport's bigger dimension (height or width).
+
+display: flex; - гибкие элементы
+	flex-direction: row, column, row-reverse, column-reverse - направление. Задаётся в родительском элементе, горизонтально/вертикально/... выстраиваются элементы-потомки
+
+	justify-content: - относительно основной оси
+		center - все flex элементы по центру своего flex контейнера
+		flex-start - в начале контейнера (ряд - слева, колонка - сверху). Значение по умолчанию, если justify-content не задан
+		flex-end - в конце контейнера
+		space-between - в центре, расстояние между элементами. Первый - слева, последний - справа, остальные между ними
+		space-around - то же, что и space-between. но крайние элементы не запираются по краям, расстояние между элменетами распределяется между всеми (половина расстояния между элементами на каждом краю)
+		space-evenly - расстояние распределяется везде равномерно, и между элменетами, и от краёв
+
+	align-items: - относительно перпендикулярной оси
+		flex-start - распределяет элементы в начале контейнера (для рядов - сверху, для колонн - слева)
+		flex-end - в конце контейнера
+		center - по центру
+		stretch - растягивает элементы на весь контейнер. Значение по умолчанию, если align-items не задан совсем.
+		baseline - по линии текста (Baseline is a text concept, think of it as the line that the letters sit on)
+
+	flex-wrap - заполнение элементов, если они ен влезают в один ряд, колонну
+		nowrap - не заворачивает, значение по умолчанию
+		wrap - слева-направо, сверху-вниз
+		wrap-reverse - справа-налево, снизу-вверх
+
+	flex-shrink - уменьшение элемента, когда родительский контейнер соишком мал
+		принимает значения численные. Если у одного элемента 1, в другого 2, то второй уменьшится в 2 раза сильнее первого
+
+	flex-grow - противоположность прошлого
+
+	flex-basis - задаёт изначальное значение элемента
+
+	flex - задаёт последний три сразу
+		flex-grow, flex-shrink, flex-basis
+		The default property settings are flex: 0 1 auto;.
+
+	order - порядок появления элементов в контейнере. По умолчанию как объявляются в html-файле
+
+	align-self - позволяет ориентировать каждый элемент индивидуально
+		принимает те же значения, что и align-items, и переопределяет его значения, если заданы оба align-items и align-self
+
+display: grid; - CSS Grid
+	в CSS Grid родитель называется container, ребёнок - item
+
+	grid-template-columns - добавление колонок
+
+	grid-template-rows - ряды
+	размеры задаются следующим образом:
+		fr - свободное место
+		auto - автоматически исходя из контента
+		% - в процентном соотношение от контейнера
+
+	grid-column-gap - разры в колонке
+
+	grid-row-gap - разрыв в рядах
+
+	grid-gap - если одно значение, значения одинаковые в рядах и колонках. Если два, то сначала ряды, потом колонки
+
+	grid-column - можно задать количество колонок в сетке. Применяется к item
+
+	grid-row - тоже, что и колонки. Задаётся в формате 1 / 3 (от линии 1 к 3)
+
+	justify-self - расположение наполнения ячейки
+		stretch - растягивание, значение по умолчанию
+		start
+		center
+		end
+
+	align-self - вертикально
+
+	justify-items - горизонтально выровнять все элементы сразу. Применяется к контейнеру
+
+	align-items - вертикально
+
+	grid-template-areas - создание шаблона (объединение ячеек в области с единым названием)
+		в кавычках даётся название каждой ячейке. Ячейку, которую не надо объединять ни с чем - называем точкой (.)
+
+	grid-area - помещение элемента в созданную область (через название до этого заданных значений)
+		можно задать и так: grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
+
+	repeat - функция задания количества повторяющихся ячеек
+		пример:
+		grid-template-rows: repeat(100, 50px);
+		grid-template-columns: repeat(2, 1fr 50px) 20px;
+		This translates to:
+		grid-template-columns: 1fr 50px 1fr 50px 20px;
+		есть свойство auto-fill - заполнение элементами, пока позволяет размер контейнера
+			пример: repeat(auto-fill, minmax(60px, 1fr));
+		auto-fit - тоже самое, но растягивает элементы до размера контейнера
+
+	minmax - функция, задающая в каких пределах меняться ячейкам при изменении контейнера
+		grid-template-columns: 100px minmax(50px, 200px);
+

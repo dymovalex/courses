@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	/*	function translatePigLatin(str) {
+			let arr = str.split('');
+			let newArr = [];
+			if(!(/^[^aoeiuy]/.test(arr[0]))){
+				for(let i = 1; i < arr.length; i++){
+					if((/^[^aoeiuy]/.test(arr[i]))){
+						return arr.join('') + 'way';
+					} 
+				}
+				return arr.join('') + 'ay';
+			} else {
+				for (let i = 0; (/^[^aoeiuy]/.test(arr[0])); i++) {
+					arr.push(arr[0]);
+					arr.shift();
+				}
+				return arr.join('') + 'ay';
+			}
+		} */
+
+
+		function translatePigLatin(str) {
+			var pigLatin = "";
+			var regex = /[aeiou]/gi;
+			if (str[0].match(regex)) {
+				pigLatin = str + "way";
+			} else if (str.match(regex) === null) {
+				pigLatin = str + "ay";
+			} else {
+				// Find how many consonants before the first vowel.
+				var vowelIndice = str.indexOf(str.match(regex)[0]);
+
+				// Take the string from the first vowel to the last char
+				// then add the consonants that were previously omitted and add the ending.
+				pigLatin = str.substr(vowelIndice) + str.substr(0, vowelIndice) + "ay";
+			}
+
+			return pigLatin;
+		}
+
+		console.log(translatePigLatin("oops"));
+		console.log(translatePigLatin("wconsonant"));
+		console.log(translatePigLatin("schwartz"));
+		console.log(translatePigLatin("oo"));
+		console.log(translatePigLatin("rhytm"));
+
+	</script>
+</body>
+</html>

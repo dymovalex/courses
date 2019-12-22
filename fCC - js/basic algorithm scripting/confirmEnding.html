@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function confirmEnding(str, target) {
+            const lastWord = str.substring(str.length - target.length, str.length)
+            return target == lastWord;
+        }
+
+        console.log(confirmEnding("Bastian", "n"));
+    </script>
+</body>
+</html>

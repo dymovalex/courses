@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Baskervville|Calistoga|Gupter|Raleway|Solway&display=swap');
+
+:root{
+	--main-width: 842px;
+}
+
+body{
+	background-color: #1f1717;
+	color: #ffffff;
+	font-family: 'Gupter', serif;
+	font-size: 10px;
+	margin: 0;
+
+
+}
+
+h1{
+	text-align: center;
+	font-size: 4.2vh;
+	margin-bottom: 0;
+	font-family: 'Calistoga', cursive;
+}
+
+#description{
+	margin-top: 0;
+	text-align: center;
+	font-size: 3vh;
+}
+
+
+figure{
+	max-width: 842px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img{
+	max-width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#tribute-info{
+
+}
+
+h2{
+	text-align: center;
+	font-size: 3vh;
+
+}
+
+.about{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
+	width: var(--main-width);
+	font-size: 2.5vh;
+}
+
+a{
+	color: white;
+}
+
+#quote-container{
+	background-color: white;
+	padding: auto 20px 20px auto;
+	margin: auto;
+}
+
+#quote{
+	border: thin;
+	color: black;
+	margin: 0;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 3vh;
+	font-family: 'Baskervville', serif;
+}
+
+#sign{
+	color: black;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 3vh;
+	font-family: 'Baskervville', serif;
+}
+
+footer{
+	text-align: center;
+	font-size: 1.5vh;
+}
+
+
+#gray-white{
+	display: block;
+	background: linear-gradient(180deg, #1f1717, white);
+	height: 20px;
+	width: 100%;
+}
+
+#white-gray{
+	display: block;
+	background: linear-gradient(180deg, white, #1f1717);
+	height: 20px;
+	width: 100%;
+}
+
+@media(max-width: 842px){
+	figure{
+		width: auto;
+	}
+	.about{
+		width: 80%;
+	}
+	#quote{
+		width: auto;
+	}
+}
+
+figcaption{
+	text-align: center;
+}

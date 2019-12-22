@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function repeatStringNumTimes(str, num) {
+            let newStr = "";
+            if(num < 0){
+                return newStr;
+            } else {
+                for(let i = 0; i < num; i++){
+                    newStr += `${str}`;
+                }
+                return newStr;
+            }
+            
+        }
+
+
+
+        console.log(repeatStringNumTimes("abc", 3));
+    </script>
+</body>
+</html>

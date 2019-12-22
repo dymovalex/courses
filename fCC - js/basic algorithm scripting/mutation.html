@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function mutation(arr) {
+            let firstWord = arr[0].toLowerCase();
+            let secondWord = arr[1].toLowerCase().split('');
+            for(let i = 0; i < secondWord.length; i++){
+                if(firstWord.indexOf(secondWord[i]) < 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        console.log(mutation(["hello", "hey"]));
+        console.log(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]));
+        console.log(mutation(["hello", "Hello"]));
+    </script>
+</body>
+</html>

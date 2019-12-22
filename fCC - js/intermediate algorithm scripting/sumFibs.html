@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	function sumFibs(num) {
+		let result = [1];
+		let pastAfter = 0;
+		let past = 1;
+		for (let current = 1; current <= num;) {
+			result.push(current);
+			pastAfter = past;
+			past = current;
+			current = past + pastAfter;
+		}
+		return result.filter(a => a%2 !== 0).reduce((a, b) => b + a);
+	}
+
+	console.log(sumFibs(34)); //
+
+	</script>
+</body>
+</html>

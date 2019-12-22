@@ -1,0 +1,118 @@
+@import "https://fonts.googleapis.com/css?family=Lato:400,700";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+header{
+   /* display: flex;*/
+
+}
+
+img{
+    display: block;
+    margin: auto;
+}
+
+#navbar{
+    width: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: white;
+}
+nav{
+    display: flex;
+    font-weight: 400;
+    align-self: auto;
+    justify-content: flex-end;
+}
+
+a{
+    display: block;
+    text-decoration: none;
+    justify-content: space-around;
+    margin: 0 2vh;
+    color: black;
+    font-size: 1.5rem;
+}
+
+main{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+section{
+    border-bottom: 2px solid #dd4814;
+}
+
+p{
+    text-align: justify;
+}
+
+h2{
+    font-size: 1.5rem;
+    margin: 0;
+    flex-grow: 1;
+    padding-top: 2.2rem;
+   
+}
+
+iframe{
+    margin-bottom: 2rem;
+    display: block;
+    margin: 0 auto;
+}
+
+form{
+    display: flex;
+    grid-template-rows: auto 1fr 20%;
+    justify-items: stretch;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    
+}
+@media (max-width: 600px) {
+    form {
+        flex-wrap: wrap;
+    }
+    nav{
+        justify-content: center;
+    }
+}
+input{
+    min-height: 2rem;
+    flex-basis: auto;
+    margin-right: 1rem;
+    flex-grow: 2;
+}
+
+#submit{
+	width: 100%;
+	font-weight: 700;
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+	background: #dd4814;
+	transition: 0.2s;
+	border: 0px;
+    font-size: 1rem;
+    flex-basis: 4rem;
+    min-height: 2rem;
+    flex-grow: 2;
+}
+
+input:focus{
+    border-color: #dd4814;
+}
+
+#footer{
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function truncateString(str, num) {
+            if(str.length > num){
+                let newStr = str.substring(0, num) + `...`;
+                return newStr
+            } else {
+                return str;
+            }
+        }
+
+        console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+    </script>
+</body>
+</html>

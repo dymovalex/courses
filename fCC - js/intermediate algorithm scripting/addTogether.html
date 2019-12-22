@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	function addTogether(...args) {
+		if(typeof args[0] !== "number"){
+			return undefined;
+		}
+		if((args.length) == 2){
+			if(typeof args[1] !== "number"){
+				return undefined
+			}
+			return args[0] + args[1];
+		} else {
+			return function(a){
+				if(typeof a !== "number"){
+					return undefined;
+				}
+				return a + args[0];
+			};
+		}
+		
+	}
+
+	console.log(addTogether(2,3 ));
+	let sumTo2 = addTogether(2);
+	console.log(sumTo2(4));
+	console.log(addTogether(2)(3));
+
+/*function addTogether(first, second) {
+  if (typeof first !== "number") {
+    return undefined;
+  }
+  const sum = second =>
+    typeof second === "number" ? first + second : undefined;
+  return typeof second === "undefined" ? second => sum(second) : sum(second);
+}*/
+
+
+
+	</script>
+</body>
+</html>

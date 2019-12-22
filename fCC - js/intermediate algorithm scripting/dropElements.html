@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+    function dropElements (arr, func){
+        let newArr = [...arr];
+        for (let i = 0; i < arr.length; i++) {
+            if(!func(arr[i])){
+                newArr.shift();
+            } else {
+                return newArr;
+            }
+        }
+        return [];
+    }
+
+    console.log(dropElements([1, 2, 3, 4], function(n) {return n > 5;}));
+
+	</script>
+</body>
+</html>
+

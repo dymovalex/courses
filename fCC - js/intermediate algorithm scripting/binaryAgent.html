@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+    function binaryAgent (str){
+        let arr = str.split(' ');
+        let result = '';
+        for (let i = 0; i < arr.length; i++) {
+            result += String.fromCharCode(parseInt(arr[i], 2));
+        }
+    return result;
+    }
+
+    console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111"));
+
+
+    /*
+for (var i = 0; i < str.length - 1; i++) {
+            if(str.charCodeAt(i+1) !== str.charCodeAt(i) + 1){
+                num = str.charCodeAt(i) + 1;
+                //res.fromCharCode(num);
+                return String.fromCharCode(num);
+            }
+        }
+        return undefined;
+        */
+
+	</script>
+</body>
+</html>

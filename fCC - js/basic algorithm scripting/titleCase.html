@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function titleCase(str) {
+            let newStr = "";
+            let arr = str.toLowerCase().split(" "); // array
+            for(let i = 0; i < arr.length; i++){ // words
+                
+               newStr += ` ${arr[i].replace(arr[i].charAt(0), arr[i].charAt(0).toUpperCase())}`;
+
+            }
+        //    newStr = arr.join(" ");
+            return newStr.trimLeft();
+            
+            //return arr[0].charAt(0).toUpperCase();
+        }
+
+        console.log(titleCase("I'm a little tea pot"));
+
+    </script>
+</body>
+</html>

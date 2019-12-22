@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	function myReplace(str, before, after) {
+		let arr = str.split(' ');
+		let newAfter = after;
+		if(before.charAt(0) === before.charAt(0).toUpperCase()){ // Значит изначальное слово с заглавной буквы
+			//console.log(true);
+			newAfter = after.charAt(0).toUpperCase() + after.slice(1);
+		}
+		arr[arr.indexOf(before)] = newAfter;
+		let res = arr.join(' ');
+		return res;
+	}
+
+	console.log(myReplace('My Dog is Doggy', 'Dog', 'cat'));
+
+	</script>
+</body>
+</html>

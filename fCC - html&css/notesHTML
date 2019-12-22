@@ -1,0 +1,117 @@
+<!DOCTYPE версия html>
+	html - по умолчанию HTML5
+<html>
+	все теги внутри
+</html>
+
+
+
+<h1></h1> headings (h2, h3, h4, h5, h6)
+<p></p> paragraph (абзац)
+Comments in HTML start with <!-- and end with a -->
+
+изображение
+<img> атрибуты:
+	src - ссылка
+	alt - заполняющий текст
+
+ссылка
+<a>текст</a> атрибуты:
+	href="" - адрес; если # - внутренняя ссылка (на элемент id)
+	target="_blank" - откроется в новом окне
+
+непрономерованные списки
+<ul> <li></li> </ul>
+
+прономерованные списки
+<ol> <li></li> </ol>
+
+лэйбл - уточнить русское название
+<label></label> - используется для form. Аттрибут for должен совпадать с id в form
+
+поле
+<input> атрибуты:
+	type="text" текстовое поле
+	placeholder
+
+	required - поле обязательно к заполнению
+
+	type="radio" радиокнопки
+	name="" объединение кнопок в одну группу
+	id=""
+		пример:
+		<label for="indoor">
+  			<input id="indoor" type="radio" name="indoor-outdoor">indoor
+		</label>
+		<label for="outdoor">
+  			<input id="outdoor" type="radio" name="indoor-outdoor">outdoor
+		</label>
+		for в label и id в input должны совпадать
+	value="" - значение, отдаваемое серверу (по умолчанию on/off)
+	checked - включено по умолчанию
+
+	type="checkbox", те же методы, что в с radio
+
+
+форма
+<form></form> атрибуты:
+	action=""
+	кнопка в форме
+	<button></button> атрибуты
+		type="submit";
+
+division element
+<div></div>
+
+<strong></strong> - жирный шрифт (в CSS это представляется как font-weight: bold)
+<u></u> - подчёркнутый (text-decoration: underline)
+<em></em> - курсив(font-style: italic)
+<s></s> - зачёркнутый (text-decoration: line-through)
+
+<hr> линия по всей ширине элемента
+
+Новые элементы html5
+	main - главная информация на странице
+	header - вводная информация (удобно размещать навигационные ссылки страницы)
+	footer - ссылки внизу страницы, копирайт и т.д.
+	nav - главные ссылки на странице
+	article
+		<div> - groups content
+		groups independent, self-contained content
+		The tag works well with blog entries, forum posts, or news articles.
+	section
+		groups related content
+		например, article - это книга, а section в ней - глава
+	audio - аудио-контент
+		аттрибут controls - добавляет автоматически элементы управления воспроизведением
+	source - медиафайл
+	figure - для диаграмм, схем
+		figcaption - текстовое описание диаграммы на случай проблем с её отображением. Тег ставится внутри figure
+	label
+		используется для form. Аттрибут for должен совпадать с id в form
+	fieldset - объединяет группу radio buttons. Использовать когда вариантов много. Если и так понятно из контекста без дополнительного объяснения (М/Ж) - использовать label
+    	legend - внутренний тег, описание выбора
+    input
+    	type="date" выбор даты. Если не поддерживается браузером - по умолчанию читает как text
+    time - время в стандартизованном формате (для девайсов людей с ограниченными возможностями)
+    	datetime = "2019-11-30"
+
+    				.sr-only { - данный класс скроет информацию, предназначенную только для скринридеров
+						position: absolute;
+						left: -10000px;
+						width: 1px;
+						height: 1px;
+						top: auto;
+						overflow: hidden;
+					}
+
+Очень важен контраст. Оптимально 4.5:1, где: 1:1 - один и тот же цвет, 21:1 - белый к чёрному. Есть различные онлайн-калькуляторы этих значений
+Чтобы увеличить контрастность можно менять lightness в hsl() Задник - повышать значение, текст - уменьшать
+
+accesskey - назначение управления на кнопку клавиатуры
+	 links, buttons, and form controls
+
+tabindex - фокус по нажатию tab. Обычно работает с формами, кнопками, ссылками
+	="0" - можно назначить элементам другим, div, span, p
+	="-1" - означает, что сфокусироваться на элементе можно, но не посредством клавиатуры
+	1, 2, 3 - порядок табуляции

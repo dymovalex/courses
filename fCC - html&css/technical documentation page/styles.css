@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+   /* display: grid;
+    grid-template-columns: 20% 1fr;*/
+    font-family: 'Lato', sans-serif;
+}
+@media(max-width: 800px){
+
+    #navbar{
+        background-color: white;
+        position: absolute;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-height: 260px;
+        border-bottom: 2px solid #bab3b3;
+        
+      }
+      #main-doc{
+        position: absolute;
+        margin-left: 0px;
+        margin-top: 270px;
+        width: 100%;
+      }
+      #codeblock{
+          width: 100%;
+      }
+     /* section header{
+        margin: 200px rem 0 1.5rem 0;
+        }*/
+}
+header{
+    font-size: 2rem;
+}
+
+section header{
+    margin: 1.5rem 0 1.5rem 0;
+
+}
+
+nav{
+    position: fixed;
+    top: 30px;
+  /*  height: 100%;*/
+   /* position: fixed;
+    width: 300px;
+    left: 0;
+    top: 0;*/
+    border-right: 2px solid #bab3b3;
+    padding-right: 8px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+main{
+    position: absolute;
+    margin-left: 340px;
+    margin-right: 40px;
+    padding: 0 20px 20px 0;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+ul{
+    list-style-type: square;
+    font-size: 1.1rem;
+}
+li{
+    padding-bottom: 0.5rem;
+}
+nav ul{
+    list-style-type: none;
+    margin-top: 1rem;
+    padding-left: 0;
+}
+nav li{
+    display: block;
+}
+nav li:hover{
+    background-color: #bab3b3;
+}
+code{
+    display: block;
+    background-color: #bab3b3;
+    margin-left: 2rem;
+    padding: 1rem;
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Product Landing Page</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<header id="header">
+		<img id="header-img" src="mainpic.png">
+		<div id="navbar">
+			<nav id="nav-bar">
+			<a class="nav-link" href="#history">History</a>
+			<a class="nav-link" href="#features">Features</a>
+			<a class="nav-link" href="#security">Security</a>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<section id="history">
+			<h2>History</h2>
+			<p>Ubuntu is built on Debian's architecture and infrastructure, and comprises Linux server, desktop and discontinued phone and tablet operating system versions. Ubuntu releases updated versions predictably every six months, and each release receives free support for nine months (eighteen months prior to 13.04) with security fixes, high-impact bug fixes and conservative, substantially beneficial low-risk bug fixes. The first release was in October 2004.</p>
+
+			<p>Current long-term support (LTS) releases are supported for five years, and are released every two years. Since the release of Ubuntu 6.06, every fourth release receives long-term support (LTS). Long-term support includes updates for new hardware, security patches and updates to the 'Ubuntu stack' (cloud computing infrastructure). The first LTS releases were supported for three years on the desktop and five years on the server; since Ubuntu 12.04 LTS, desktop support for LTS releases was increased to five years as well. LTS releases get regular point releases with support for new hardware and integration of all the updates published in that series to date.</p>
+			
+			<p>Ubuntu packages are based<div class="logo">
+			 </div>ebuilt from source to be used in Ubuntu. Many Ubuntu developers are also maintainers of key packages within Debian. Ubuntu cooperates with Debian by pushing changes back to Debian, although there has been criticism that this does not happen often enough. Ian Murdock, the founder of Debian, had expressed concern about Ubuntu packages potentially diverging too far from Debian to remain compatible. Before release, packages are imported from Debian unstable continuously and merged with Ubuntu-specific modifications. One month before release, imports are frozen, and packagers then work to ensure that the frozen features interoperate well together.</p>
+			
+			<p>Ubuntu is currently funded by Canonical Ltd. On 8 July 2005, Mark Shuttleworth and Canonical announced the creation of the Ubuntu Foundation and provided an initial funding of US$10 million. The purpose of the foundation is to ensure the support and development for all future versions of Ubuntu. Mark Shuttleworth describes the foundation goal as to ensure the continuity of the Ubuntu project.</p>
+			
+			<p>On 12 March 2009, Ubuntu announced developer support for third-party cloud management platforms, such as those used at Amazon EC2.</p>
+			
+			<p>GNOME 3 has been the default GUI for Ubuntu Desktop since Ubuntu 17.10, while Unity is still the default in older versions,including all current LTS versions except <div class="logo">
+			 </div>18.04 LTS. However, a community-driven fork of Unity 8, called Yunit, has been created to continue the development of Unity. Shuttleworth wrote on 8 April 2017, "We will invest in Ubuntu GNOME with the intent of delivering a fantastic all-GNOME desktop. We're helping the Ubuntu GNOME team, not creating something different or competitive with that effort. While I am passionate about the design ideas in Unity, and hope GNOME may be more open to them now, I think we should respect the GNOME design leadership by delivering GNOME the way GNOME wants it delivered. Our role in that, as usual, will be to make sure that upgrades, integration, security, performance and the full experience are fantastic."Shuttleworth also mentioned that Canonical will cease development for Ubuntu Phone, Tablet, and convergence.</p>
+			
+			<p>32-bit i386 processors have been supported up to Ubuntu 18.04, but users "will not be allowed to upgrade to Ubuntu 18.10 as dropping support for that architecture is being evaluated". It was decided to support "legacy software", i.e. select 32-bit i386 packages for Ubuntu 19.10 and 20.04 LTS</p>
+		</section>
+		<section id="features">
+			<h2>Features</h2>
+			<p>A default installation of Ubuntu contains a wide range of software that includes LibreOffice, Firefox, Thunderbird, Transmission, and several lightweight games such as Sudoku and chess. Many additional software packages are accessible from the built in Ubuntu Software (previously Ubuntu Software Center) as well as any other APT-based package management tools. Many additional software packages that are no longer installed by default, such as Evolution, GIMP, Pidgin, and Synaptic, are still accessible in the repositories still installable by the main tool or by any other APT-based package management tool. Cross-distribution snap packages and flatpaks are also available, that both allow installing software, such as some of Microsoft's software, in most of the major Linux operating systems (such as any currently supported Ubuntu version and in Fedora). The default file manager is GNOME Files, formerly called Nautilus.</p>
+			<p>Ubuntu operates under the GNU General Public License (GPL) and all of the application software installed by default is free software. In addition, Ubuntu installs some hardware drivers that are available only in binary format, but such packages are clearly marked in the restricted component.</p>
+		</section>
+		<section id="security">
+			<h2>Security</h2>
+			<p>Ubuntu aims to be secure by default. User programs run with low privileges and cannot corrupt the operating system or other users' files. For increased security, the sudo tool is used to assign temporary privileges for performing administrative tasks, which allows the root account to remain locked and helps prevent inexperienced users from inadvertently making catastrophic system changes or opening security holes. Polkit is also being widely implemented into the desktop.</p>
+			<p>Most network ports are closed by default to prevent hacking. A built-in firewall allows end-users who install network servers to control access. A GUI (GUI for Uncomplicated Firewall) is available to configure it. Ubuntu compiles its packages using GCC features such as PIE and buffer overflow protection to harden its software. These extra features greatly increase security at the performance expense of 1% in 32-bit and 0.01% in 64-bit.</p>
+			<p>Ubuntu also supports full disk encryption as well as encryption of the home and Private directories.</p>
+		</section>
+		<h2 id="footer">What's new in Ubuntu 19.10?</h2>
+		<iframe width="600" height="400" src="https://www.youtube.com/embed/4YywtDfnDI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<form id="form">
+			<h2>Subscribe to the newsletter about Ubuntu</h2>
+			<input id="email" type="email" name="email" placeholder="Enter your email">
+			<button id="submit" type="submit" value="https://www.freecodecamp.com/email-submit">Confirm</button>	
+		</form>	
+	</main>
+</body>
+</html>

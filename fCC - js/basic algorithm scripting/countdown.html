@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function countdown(n){
+             if(n < 1){
+                return [];
+            } else {
+                let arr = countdown(n  - 1);
+                arr.unshift(n);
+                return arr;
+            }         
+  
+        }
+console.log(countdown(5)); // [5, 4, 3, 2, 1]
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function factorialize(num) {
+            if(!num){
+                return 1;
+            } else {
+                let result = 1;
+                for(let i = num; i >= 1; i--){
+                    result *= i;
+                }
+            return result;
+            }
+            
+        }
+
+        console.log(factorialize(5)); // 120      
+
+    </script>
+</body>
+</html>

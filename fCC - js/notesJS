@@ -1,0 +1,726 @@
+//Strings
+.length //возвращает длину строки
+parseInt(string, radix); //function parses a string and returns an integer; radix - binary... (can be 2...36)
+
+//Arrays
+.push() // добавляет элемент в конец массив
+.pop() // удаляет последний элемент из массива, возвращает удалённое значение
+.shift() // удаляет первый элемент из массива, возвращает удалённое значение
+.unshift() // добавляет элемент в начало массива
+.splice(start, quantity, inserted elements...) // delete elements from array
+.slice(start, end not included) // do a copy of an array
+let newArray = [...oldArray] // copying the array
+  let thatArray = ['basil', 'cilantro', ...thisArray, 'coriander'];
+.indexOf() //takes an element as a parameter, and when called, it returns the position, or index, of that element, or -1 if the element does not exist on the array.
+every(), forEach(), map()
+
+
+
+//Objects
+.hasOwnProperty(propname) // true or false
+  users.hasOwnProperty('Alan');
+  'Alan' in users;
+  // both return true
+for (let user in users) {
+  console.log(user);
+  }
+delete
+Object.keys()
+
+//ternary operator
+condition ? statement-if-true : statement-if-false;
+
+//ES6
+
+//To ensure your data doesn't change, JavaScript provides a function Object.freeze to prevent data mutation.
+
+//arrow function syntax:
+
+const myFunc = () => {
+const myVar = "value";
+return myVar;
+}
+
+===
+
+const myFunc = () => "value";
+
+Just like a regular function, you can pass arguments into an arrow function.
+
+// doubles input value and returns it
+const doubler = (item) => item * 2;
+If an arrow function has a single argument, the parentheses enclosing the argument may be omitted.
+
+// the same function, without the argument parentheses
+const doubler = item => item * 2;
+
+//In order to help us create more flexible functions, ES6 introduces the rest parameter for function parameters. With the rest parameter, you can //create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.
+
+//ES6 introduces the spread operator, which allows us to expand arrays and other expressions in places where multiple parameters or elements are expected.
+
+const user = { name: 'John Doe', age: 34 };
+
+const name = user.name; // name = 'John Doe'
+const age = user.age; // age = 34
+
+//Here's an equivalent assignment statement using the ES6 destructuring syntax:
+
+const { name, age } = user;
+// name = 'John Doe', age = 34
+
+//Here's how you can give new variable names in the assignment:
+
+const { name: userName, age: userAge } = user;
+// userName = 'John Doe', userAge = 34
+
+//Here's how to extract the values of object properties and assign them to variables with the same name:
+
+const { johnDoe: { age, email }} = user;
+//And here's how you can assign an object properties' values to variables with different names:
+
+const { johnDoe: { age: userAge, email: userEmail }} = user;
+
+//Destructuring an array lets us do exactly that:
+
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b); // 1, 2
+//The variable a is assigned the first value of the array, and b is assigned the second value of the array. We can also access the value at any index in an array with destructuring by using commas to reach the desired index:
+
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b,,, c); // 1, 2, 5
+
+In some cases, you can destructure the object in a function argument itself.
+
+//Consider the code below:
+
+const profileUpdate = (profileData) => {
+const { name, age, nationality, location } = profileData;
+// do something with these variables
+}
+//This effectively destructures the object sent into the function. This can also be done in-place:
+
+const profileUpdate = ({ name, age, nationality, location }) => {
+/* do something with these fields */
+}
+
+//A new feature of ES6 is the template literal. This is a special type of string that makes creating complex strings easier.
+//Template literals allow you to create multi-line strings and to use string interpolation features to create strings.
+
+const getMousePosition = (x, y) => ({
+    x: x,
+    y: y
+    });
+//getMousePosition is a simple function that returns an object containing two properties. ES6 provides the syntactic sugar to eliminate the redundancy of having to write x: x. You can simply write x once, and it will be converted tox: x (or something equivalent) under the hood. Here is the same function from above rewritten to use this new syntax:
+    
+const getMousePosition = (x, y) => ({ x, y });
+
+const person = {
+    name: "Taylor",
+    sayHello: function() {
+        return `Hello! My name is ${this.name}.`;
+    }
+};
+//With ES6, You can remove the function keyword and colon altogether when defining functions in objects. Here's an example of this syntax:
+
+const person = {
+name: "Taylor",
+sayHello() {
+    return `Hello! My name is ${this.name}.`;
+}
+};
+
+var SpaceShuttle = function(targetPlanet){
+this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+//The class syntax simply replaces the constructor function creation:
+
+class SpaceShuttle {
+constructor(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+}
+}
+const zeus = new SpaceShuttle('Jupiter');
+
+
+//Modules
+<script type="module" src="filename.js"></script>
+export const add = (x, y) => {
+return x + y;
+}
+//The above is a common way to export a single function, but you can achieve the same thing like this:
+
+const add = (x, y) => {
+return x + y;
+}
+
+export { add };
+
+export default (import add from "./math_functions.js";)
+
+import { add } from './math_functions.js';
+//Here, import will find add in math_functions.js, import just that function for you to use, and ignore the rest. The ./ tells the import to look for the math_functions.js file in the same folder as the current file. The relative file path (./) and file extension (.js) are required when using import in this way.
+
+//You can import more than one item from the file by adding them in the import statement like this:
+
+import { add, subtract } from './math_functions.js';
+
+import * as myMathModule from "./math_functions.js";
+
+//Promises
+
+const myPromise = new Promise((resolve, reject) => {
+
+});
+
+//A promise has three states: pending, fulfilled, and rejected. The promise you created in the last challenge is forever stuck in the pending state because you did not add a way to complete the promise. The resolve and reject parameters given to the promise argument are used to do this. resolve is used when you want your promise to succeed, and reject is used when you want it to fail. These are methods that take an argument, as seen below.
+
+const myPromise = new Promise((resolve, reject) => {
+  if(condition here) {
+    resolve("Promise was fulfilled");
+  } else {
+    reject("Promise was rejected");
+  }
+});
+
+//Promises are most useful when you have a process that takes an unknown amount of time in your code (i.e. something asynchronous), often a server request. When you make a server request it takes some amount of time, and after it completes you usually want to do something with the response from the server. This can be achieved by using the then method. The then method is executed immediately after your promise is fulfilled with resolve. Here’s an example:
+
+myPromise.then(result => {
+  // do something with the result.
+});
+
+//catch is the method used when your promise has been rejected. It is executed immediately after a promise's reject method is called. Here’s the syntax:
+
+myPromise.catch(error => {
+  // do something with the error.
+});
+//error is the argument passed in to the reject method.
+
+//Regular Expressions
+
+//JavaScript has multiple ways to use regexes. One way to test a regex is using the .test() method. The .test() method takes the regex, applies it to a string (which is placed inside the parentheses), and returns true or false if your pattern finds something or not.
+
+/yes|no|maybe/ //OR
+
+//You can match both cases using what is called a flag. There are other flags but here you'll focus on the flag that ignores case - the i flag. You can use it by appending it to the regex. An example of using this flag is /ignorecase/i. This regex can match the strings "ignorecase", "igNoreCase", and "IgnoreCase".
+
+//To use the .match() method, apply the method on a string and pass in the regex inside the parentheses. Here's an example:
+
+"Hello, World!".match(/Hello/);
+// Returns ["Hello"]
+let ourStr = "Regular expressions";
+let ourRegex = /expressions/;
+ourStr.match(ourRegex);
+// Returns ["expressions"]
+
+//To search or extract a pattern more than once, you can use the g flag.
+
+let repeatRegex = /Repeat/g;
+testStr.match(repeatRegex);
+// Returns ["Repeat", "Repeat", "Repeat"]
+
+//The wildcard character . will match any one character. The wildcard is also called dot and period. You can use the wildcard character just like any other character in the regex. For example, if you wanted to match "hug", "huh", "hut", and "hum", you can use the regex /hu./ to match all four words.
+
+let humStr = "I'll hum a song";
+let hugStr = "Bear hug";
+let huRegex = /hu./;
+huRegex.test(humStr); // Returns true
+huRegex.test(hugStr); // Returns true
+
+//You can search for a literal pattern with some flexibility with character classes. Character classes allow you to define a group of characters you wish to match by placing them inside square ([ and ]) brackets.
+
+//For example, you want to match "bag", "big", and "bug" but not "bog". You can create the regex /b[aiu]g/ to do this. The [aiu] is the character class that will only match the characters "a", "i", or "u".
+
+let bigStr = "big";
+let bagStr = "bag";
+let bugStr = "bug";
+let bogStr = "bog";
+let bgRegex = /b[aiu]g/;
+bigStr.match(bgRegex); // Returns ["big"]
+bagStr.match(bgRegex); // Returns ["bag"]
+bugStr.match(bgRegex); // Returns ["bug"]
+bogStr.match(bgRegex); // Returns null
+
+//Inside a character set, you can define a range of characters to match using a hyphen character: -.
+//For example, to match lowercase letters a through e you would use [a-e].
+
+let catStr = "cat";
+let batStr = "bat";
+let matStr = "mat";
+let bgRegex = /[a-e]at/;
+catStr.match(bgRegex); // Returns ["cat"]
+batStr.match(bgRegex); // Returns ["bat"]
+matStr.match(bgRegex); // Returns null
+
+//To create a negated character set, you place a caret character (^) after the opening bracket and before the characters you do not want to match.
+
+//You can use the + character to check if that is the case. Remember, the character or pattern has to be present consecutively. That is, the character has to repeat one after the other.
+
+//For example, /a+/g would find one match in "abc" and return ["a"]. Because of the +, it would also find a single match in "aabc" and return ["aa"].
+
+//If it were instead checking the string "abab", it would find two matches and return ["a", "a"] because the a characters are not in a row - there is a b between them. Finally, since there is no "a" in the string "bcd", it wouldn't find a match.
+
+//The character to do this is the asterisk or star: *.
+
+let soccerWord = "gooooooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/;
+soccerWord.match(goRegex); // Returns ["goooooooo"]
+gPhrase.match(goRegex); // Returns ["g"]
+oPhrase.match(goRegex); // Returns null
+
+//You can apply the regex /t[a-z]*i/ to the string "titanic". This regex is basically a pattern that starts with t, ends with i, and has some letters in between.
+
+//Regular expressions are by default greedy, so the match would return ["titani"]. It finds the largest sub-string possible to fit the pattern.
+
+//However, you can use the ? character to change it to lazy matching. "titanic" matched against the adjusted regex of /t[a-z]*?i/ returns ["ti"].
+
+//In an earlier challenge, you used the caret character (^) inside a character set to create a negated character set in the form [^thingsThatWillNotBeMatched]. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
+
+let firstString = "Ricky is first and can be found.";
+let firstRegex = /^Ricky/;
+firstRegex.test(firstString);
+// Returns true
+let notFirst = "You can't find Ricky now.";
+firstRegex.test(notFirst);
+// Returns false
+
+//You can search the end of strings using the dollar sign character $ at the end of the regex.
+// \w. This shortcut is equal to [A-Za-z0-9_].
+// \W = [^A-Za-z0-9_].
+// \d = [0-9]
+// \D = [^0-9]
+
+//You can search for whitespace using \s, which is a lowercase s. This pattern not only matches whitespace, but also carriage return, tab, form feed, and new line characters. You can think of it as similar to the character class [ \r\t\f\n\v].
+
+let whiteSpace = "Whitespace. Whitespace everywhere!"
+let spaceRegex = /\s/g;
+whiteSpace.match(spaceRegex);
+// Returns [" ", " "]
+
+//Search for non-whitespace using \S, which is an uppercase s. This pattern will not match whitespace, carriage return, tab, form feed, and new line characters. You can think of it being similar to the character class [^ \r\t\f\n\v].
+
+let whiteSpace = "Whitespace. Whitespace everywhere!"
+let nonSpaceRegex = /\S/g;
+whiteSpace.match(nonSpaceRegex).length; // Returns 32
+
+//You can specify the lower and upper number of patterns with quantity specifiers. Quantity specifiers are used with curly brackets ({ and }). You put two numbers between the curly brackets - for the lower and upper number of patterns.
+
+//For example, to match only the letter a appearing between 3 and 5 times in the string "ah", your regex would be /a{3,5}h/.
+
+let A4 = "aaaah";
+let A2 = "aah";
+let multipleA = /a{3,5}h/;
+multipleA.test(A4); // Returns true
+multipleA.test(A2); // Returns false
+
+//To specify a certain number of patterns, just have that one number between the curly brackets.
+
+//For example, to match only the word "hah" with the letter a 3 times, your regex would be /ha{3}h/.
+
+let A4 = "haaaah";
+let A3 = "haaah";
+let A100 = "h" + "a".repeat(100) + "h";
+let multipleHA = /ha{3}h/;
+multipleHA.test(A4); // Returns false
+multipleHA.test(A3); // Returns true
+multipleHA.test(A100); // Returns false
+
+//You can specify the possible existence of an element with a question mark, ?. This checks for zero or one of the preceding element. You can think of this symbol as saying the previous element is optional.
+
+//For example, there are slight differences in American and British English and you can use the question mark to match both spellings.
+
+let american = "color";
+let british = "colour";
+let rainbowRegex= /colou?r/;
+rainbowRegex.test(american); // Returns true
+rainbowRegex.test(british); // Returns true
+
+//A positive lookahead is used as (?=...) where the ... is the required part that is not matched.
+
+//On the other hand, a negative lookahead will look to make sure the element in the search pattern is not there. A negative lookahead is used as (?!...) where the ... is the pattern that you do not want to be there. The rest of the pattern is returned if the negative lookahead part is not present.
+
+//Lookaheads are a bit confusing but some examples will help.
+
+let quit = "qu";
+let noquit = "qt";
+let quRegex= /q(?=u)/;
+let qRegex = /q(?!u)/;
+quit.match(quRegex); // Returns ["q"]
+noquit.match(qRegex); // Returns ["q"]
+
+//A more practical use of lookaheads is to check two or more patterns in one string. Here is a (naively) simple password checker that looks for between 3 and 6 characters and at least one number:
+
+let password = "abc123";
+let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+checkPass.test(password); // Returns true
+
+//Sometimes we want to check for groups of characters using a Regular Expression and to achieve that we use parentheses ().
+
+//If you want to find either Penguin or Pumpkin in a string, you can use the following Regular Expression: /P(engu|umpk)in/g
+
+//Then check whether the desired string groups are in the test string by using the test() method.
+
+let testStr = "Pumpkin";
+let testRegex = /P(engu|umpk)in/g;
+testRegex.test(testStr);
+// Returns true
+
+//You can search for repeat substrings using capture groups. Parentheses, ( and ), are used to find repeat substrings. You put the regex of the pattern that will repeat in between the parentheses.
+
+//To specify where that repeat string will appear, you use a backslash (\) and then a number. This number starts at 1 and increases with each additional capture group you use. An example would be \1 to match the first group.
+
+//The example below matches any word that occurs twice separated by a space:
+
+let repeatStr = "regex regex";
+let repeatRegex = /(\w+)\s\1/;
+repeatRegex.test(repeatStr); // Returns true
+repeatStr.match(repeatRegex); // Returns ["regex regex", "regex"]
+
+//You can search and replace text in a string using .replace() on a string. The inputs for .replace() is first the regex pattern you want to search for. The second parameter is the string to replace the match or a function to do something.
+
+let wrongText = "The sky is silver.";
+let silverRegex = /silver/;
+wrongText.replace(silverRegex, "blue");
+// Returns "The sky is blue."
+You can also access capture groups in the replacement string with dollar signs ($).
+
+"Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');
+// Returns "Camp Code"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//OOP
+//Constructor
+function Bird() {
+  this.name = name;
+  this.color = color;
+  this.numLegs = 2;
+}
+
+let blueBird = new Bird();
+
+instanceof
+
+Bird.prototype.numLegs = 2;
+
+for (let property in duck) {
+  if(duck.hasOwnProperty(property)) {
+    ownProps.push(property);
+  } else {
+    prototypeProps.push(property);
+  }
+}
+
+
+Bird.prototype = {
+  constructor: Bird, // define the constructor property
+  numLegs: 2, 
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+
+
+Bird.prototype.isPrototypeOf(duck);
+// returns true
+
+//This and the next challenge will cover how to reuse Animal's methods inside Bird and Dog without defining them again. It uses a technique called inheritance. This challenge covers the first step: make an instance of the supertype (or parent). You already know one way to create an instance of Animal using the new operator:
+
+let animal = new Animal();
+//There are some disadvantages when using this syntax for inheritance, which are too complex for the scope of this challenge. Instead, here's an alternative approach without those disadvantages:
+
+let animal = Object.create(Animal.prototype);
+
+//This challenge covers the next step: set the prototype of the subtype (or child)—in this case, Bird—to be an instance of Animal.
+
+Bird.prototype = Object.create(Animal.prototype);
+
+Bird.prototype.constructor = Bird;
+duck.constructor // function Bird(){...}
+
+Bird.prototype.fly = function() {
+  console.log("I'm flying!");
+};
+
+
+
+ChildObject.prototype = Object.create(ParentObject.prototype);
+
+
+
+
+//For unrelated objects, it's better to use mixins. A mixin allows other objects to use a collection of functions.
+
+let flyMixin = function(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  }
+};
+
+
+function Bird() {
+  let hatchedEgg = 10; // private variable
+
+  /* publicly available method that a bird object can use */
+  this.getHatchedEggCount = function() { 
+    return hatchedEgg;
+  };
+}
+let ducky = new Bird();
+ducky.getHatchedEggCount(); // returns 10
+
+
+
+!!! In JavaScript, a function always has access to the context in which it was created. This is called closure.
+
+//Immediately Invoked Function Expression (IIFE)
+
+
+
+//An immediately invoked function expression (IIFE) is often used to group related functionality into a single object or module. For example, an earlier challenge defined two mixins:
+
+function glideMixin(obj) {
+  obj.glide = function() {
+    console.log("Gliding on the water");
+  };
+}
+function flyMixin(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  };
+}
+//We can group these mixins into a module as follows:
+
+let motionModule = (function () {
+  return {
+    glideMixin: function(obj) {
+      obj.glide = function() {
+        console.log("Gliding on the water");
+      };
+    },
+    flyMixin: function(obj) {
+      obj.fly = function() {
+        console.log("Flying, wooosh!");
+      };
+    }
+  }
+})(); // The two parentheses cause the function to be immediately invoked
+
+
+
+//Functional Programming
+/*
+Functional programming is about:
+
+1) Isolated functions - there is no dependence on the state of the program, which includes global variables that are subject to change
+
+2) Pure functions - the same input always gives the same output
+
+3) Functions with limited side effects - any changes, or mutations, to the state of the program outside the function are carefully controlled
+
+Callbacks are the functions that are slipped or passed into another function to decide the invocation of that function. You may have seen them passed to other methods, for example in filter, the callback function tells JavaScript the criteria for how to filter an array.
+
+Functions that can be assigned to a variable, passed into another function, or returned from another function just like any other normal value, are called first class functions. In JavaScript, all functions are first class functions.
+
+The functions that take a function as an argument, or return a function as a return value are called higher order functions.
+
+When the functions are passed in to another function or returned from another function, then those functions which gets passed in or returned can be called a lambda.
+*/
+
+
+// tabs is an array of titles of each site open within the window
+var Window = function(tabs) {
+  this.tabs = tabs; // we keep a record of the array inside the object
+};
+
+// When you join two windows into one window
+Window.prototype.join = function (otherWindow) {
+  this.tabs = this.tabs.concat(otherWindow.tabs);
+  return this;
+};
+
+// When you open a new tab at the end
+Window.prototype.tabOpen = function (tab) {
+  this.tabs.push('new tab'); // let's open a new tab for now
+  return this;
+};
+
+// When you close a tab
+Window.prototype.tabClose = function (index) {
+
+  // Only change code below this line
+
+  var tabsBeforeIndex = this.tabs.splice(0, index); // get the tabs before the tab
+  var tabsAfterIndex = this.tabs.splice(index + 1); // get the tabs after the tab
+
+  this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // join them together
+
+  // Only change code above this line
+
+  return this;
+ };
+
+// Let's create three browser windows
+var workWindow = new Window(['GMail', 'Inbox', 'Work mail', 'Docs', 'freeCodeCamp']); // Your mailbox, drive, and other work sites
+var socialWindow = new Window(['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium']); // Social sites
+var videoWindow = new Window(['Netflix', 'YouTube', 'Vimeo', 'Vine']); //  Entertainment sites
+
+// Now perform the tab opening, closing, and other operations
+var finalTabs = socialWindow
+                    .tabOpen() // Open a new tab for cat memes
+                    .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
+                    .join(workWindow.tabClose(1).tabOpen());
+console.log(finalTabs.tabs);
+
+
+//functional programming
+/*
+So far, we have seen two distinct principles for functional programming:
+
+1) Don't alter a variable or object - create new variables and objects and return them if need be from a function.
+
+2) Declare function arguments - any computation inside a function depends only on the arguments, and not on any global object or variable.
+*/
+
+
+const users = [
+  { name: 'John', age: 34 },
+  { name: 'Amy', age: 20 },
+  { name: 'camperCat', age: 10 }
+];
+
+const names = users.map(user => user.name);
+console.log(names); // [ 'John', 'Amy', 'camperCat' ]
+
+const users = [
+  { name: 'John', age: 34 },
+  { name: 'Amy', age: 20 },
+  { name: 'camperCat', age: 10 }
+];
+
+const usersUnder30 = users.filter(user => user.age < 30);
+console.log(usersUnder30); // [ { name: 'Amy', age: 20 }, { name: 'camperCat', age: 10 } ]
+
+
+//filter
+
+// the global Array
+var s = [23, 65, 98, 5];
+
+Array.prototype.myFilter = function(callback){
+  var newArray = [];
+  // Add your code below this line
+  for(let i = 0; i < this.length; i++){
+    if(callback(this[i])){
+      newArray.push(this[i]);
+    }
+  }
+  
+  // Add your code above this line
+  return newArray;
+
+};
+
+var new_s = s.myFilter(function(item){
+  return item % 2 === 1;
+});
+
+.slice - возвращает новый массив
+.splice - изменяет старый
+
+.concat - возвращает новый массив
+.push - изменяет старый
+
+.sort - изменяет старый
+
+const users = [
+  { name: 'John', age: 34 },
+  { name: 'Amy', age: 20 },
+  { name: 'camperCat', age: 10 }
+];
+
+const sumOfAges = users.reduce((sum, user) => sum + user.age, 0);
+console.log(sumOfAges); // 64
+
+
+function ascendingOrder(arr) {
+  return arr.sort(function(a, b) {
+    return a - b;
+  });
+}
+ascendingOrder([1, 5, 2, 3, 4]);
+// Returns [1, 2, 3, 4, 5]
+
+function reverseAlpha(arr) {
+  return arr.sort(function(a, b) {
+    return a === b ? 0 : a < b ? 1 : -1;
+  });
+}
+reverseAlpha(['l', 'h', 'z', 'b', 's']);
+// Returns ['z', 's', 'l', 'h', 'b']
+
+//When such a callback function, normally called compareFunction, is supplied, the array elements are sorted according to the return value of the compareFunction: If compareFunction(a,b) returns a value less than 0 for two elements a and b, then a will come before b. If compareFunction(a,b) returns a value greater than 0 for two elements a and b, then b will come before a. If compareFunction(a,b) returns a value equal to 0 for two elements a and b, then a and b will remain unchanged.
+
+var numbers = [1, 5, 8, 0, 10, 11];
+numbers.every(function(currentValue) {
+  return currentValue < 10;
+});
+// Returns false
+
+var numbers = [10, 50, 8, 220, 110, 11];
+numbers.some(function(currentValue) {
+  return currentValue < 10;
+});
+// Returns true
+
+Functional Programming: Introduction to Currying and Partial Application
+The arity of a function is the number of arguments it requires. Currying a function means to convert a function of N arity into N functions of arity 1.
+
+In other words, it restructures a function so it takes one argument, then returns another function that takes the next argument, and so on.
+
+Here's an example:
+
+//Un-curried function
+function unCurried(x, y) {
+  return x + y;
+}
+
+//Curried function
+function curried(x) {
+  return function(y) {
+    return x + y;
+  }
+}
+//Alternative using ES6
+const curried = x => y => x + y
+
+curried(1)(2) // Returns 3
+This is useful in your program if you can't supply all the arguments to a function at one time. You can save each function call into a variable, which will hold the returned function reference that takes the next argument when it's available. Here's an example using the curried function in the example above:
+
+// Call a curried function in parts:
+var funcForY = curried(1);
+console.log(funcForY(2)); // Prints 3
+Similarly, partial application can be described as applying a few arguments to a function at a time and returning another function that is applied to more arguments. Here's an example:
+
+//Impartial function
+function impartial(x, y, z) {
+  return x + y + z;
+}
+var partialFn = impartial.bind(this, 1, 2);
+partialFn(10); // Returns 13

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Sopranos Survey</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+	
+<body>
+	<div id="survey-div">
+		<header>
+			<h1 id="title" class="text-center">The Sopranos</h1>
+			<p id="description" class="text-center">Thank you for participating in this survey about this greatest series</p>	
+		</header>
+		<div id="form-container">
+			<form id="survey-form">
+				<div class="form">
+					<p class="text-left">Name</p>
+					<label for="name" id="name-label">
+						<input
+							type="text"
+							id="name"
+							name="name"
+							class="form-view"
+							placeholder="Enter your name"
+							required>
+					</label>
+				</div>
+				<div class="form">
+					<p class="text-left">Email</p>
+					<label for="email" id="email-label">
+						<input
+							type="email"
+							id="email"
+							name="email"
+							class="form-view"
+							placeholder="Enter your email address"
+							required>
+					</label>
+				</div>
+				<div class="form">
+					<p class="text-left">How many times did you watch this show?</p>
+					<label for="number" id="number-label">
+						<input
+							type="number"
+							id="number"
+							name="number"
+							class="form-view"
+							min="0"
+							max="99"
+							placeholder="Enter your answer"
+							required>
+					</label>
+				</div>
+				<div class="form">
+				<p class="text-left">Which season do you think is the best?</p>
+				<select id="dropdown" name="list" class="form-view">
+					<option disabled selected value>Make your choice</option>
+		    		<option value=>First, of course. The beginning is always better.</option>
+				    <option value=>Second, definitely.</option>
+				    <option value=>Are you kidding? The third one rocks!</option>
+				    <option value=>Fourth and only fourth.</option>
+				    <option value=>Fifth, no matter what they say.</option>
+				    <option value=>Sixth season. Such a finale!</option>
+				    <option value=>I don't now, I haven't watch it yet</option>
+		  		</select>
+		  		</div>
+				<div class="form">
+					<p class="text-left">When did you watch The Sopranos?</p>
+					<label>
+			  			<input
+			  			type="radio"
+			  			name="radio"
+			  			value="When show was broadcasting on HBO"
+			  			class="input-radio"> When show was broadcasting on HBO
+					</label>
+					<label>
+			  			<input
+			  			type="radio"
+			  			name="radio"
+			  			value="After the broadcasting is over"
+			  			class="input-radio">After the broadcasting is over
+					</label>
+					<label>
+			  			<input
+			  			type="radio"
+			  			name="radio"
+			  			value="Choice number 2"
+			  			class="input-radio">I haven't watch it yet
+					</label>
+				</div>
+				<div class="form">
+				<p class="text-left">What movies have you watched from the list below?</p></div>
+				<div class="form">
+					<label>
+			  			<input
+			  			type="checkbox"
+			  			name="check"
+			  			value="The Godfather, 1972"
+			  			class="input-check">The Godfather, 1972
+					</label>
+					<label>
+			  			<input
+			  			type="checkbox"
+			  			name="check"
+			  			value="Once Upon a Time in America, 1983"
+			  			class="input-check">Once Upon a Time in America, 1983
+					</label>
+					<label>
+			  			<input
+			  			type="checkbox"
+			  			name="check"
+			  			value="Casino, 1995"
+			  			class="input-check">Casino, 1995
+					</label>
+					<label>
+			  			<input
+			  			type="checkbox"
+			  			name="check"
+			  			value="Goodfellas, 1990"
+			  			class="input-check">Goodfellas, 1990
+					</label>
+				</div>
+				<div class="form">
+				<p class="text-left">What do you think about The Sopranos?</p>
+				</div>
+				<div class="form">
+					<textarea
+						id="comments"
+						class="input-textarea"
+						name="comments"
+						placeholder="Enter your comment here"></textarea>
+				</div>
+					
+
+				<div class="form">
+					<button type="submit" id="submit" class="form-view">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
