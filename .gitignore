@@ -1,0 +1,13 @@
+# примеры Веса Боса
+WesBosExamples/
+
+# Папки .cache/, .parcel-cache/, dist/, node-modules/
+.cache
+.parcel-cache
+dist
+node_modules
+
+
+
+# .gitignore itself
+#.gitignore
