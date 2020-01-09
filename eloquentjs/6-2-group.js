@@ -1,3 +1,61 @@
+class Group {
+	constructor(){
+		this.group = {};
+	}
+	add (obj) {
+		const prop = Object.keys(obj);
+		if(prop.length > 1){
+			return `It's not possible to push in Group more than 1 property at the time`;
+		}
+		if(this.group.hasOwnProperty(prop)){
+			return `Value ${prop} is already in Group`;
+		}
+		this.group = {...this.group, ...obj};
+		return this.group;
+	}
+	delete (obj) {
+		const prop = Object.keys(obj);
+		if(!this.group.hasOwnProperty(prop)){
+			return `Property ${prop} doesn's exist in Group yet`;
+		}
+		delete this.group[prop];
+		return this.group;
+	}
+	has (obj) {
+		const prop = Object.keys(obj);
+		if(!this.group.hasOwnProperty(prop)){
+			return false;
+		}
+		return true;
+	}
+}
+
+const myGroup = new Group();
+
+console.groupCollapsed('add');
+console.log('Adding property A');
+console.log(myGroup.add({A: 1}));
+console.log('Adding two properties B and C');
+console.warn(myGroup.add({B: 2, C: 3}));
+console.log('Adding property B');
+console.log(myGroup.add({B: 2}));
+console.log('Adding property B second time');
+console.warn(myGroup.add({B: 2}));
+console.groupEnd('add');
+
+console.groupCollapsed('delete');
+console.log('Deleting property A');
+console.log(myGroup.delete({A: undefined}));
+console.log('Deleting property A second time');
+console.warn(myGroup.delete({A: undefined}));
+console.groupEnd('delete');
+
+console.group('has');
+console.log('Has this Group property A?');
+console.info(myGroup.has({A: undefined}));
+console.log('Has this Group property B?');
+console.info(myGroup.has({B: undefined}));
+console.groupEnd('has');
 /*
 Стандартная среда JavaScript предоставляет еще одну структуру данных,
 которая называется Set. Подобно экземпляру Map, Set содержит коллекцию
