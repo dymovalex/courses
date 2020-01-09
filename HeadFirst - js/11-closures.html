@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Chapter 11 - Closures</title>
+		<style type="text/css">
+		</style>
+		<script type="text/javascript">
+/*
+		function makePassword(password){
+			return function guess(passwordGuess){
+				return (passwordGuess === password);
+			};
+		}
+
+		var doATry = makePassword("ABC");
+		console.log(doATry("ABC"));
+		console.log(doATry("QWERTY"));
+*/
+/*
+		function multN(n){
+			return function index (m){return n*m;};
+		}
+
+		var calc = multN(2);
+		console.log(calc(2));
+		console.log(calc(10));
+*/
+
+		function makeCounter(){
+			var count=0;
+			/*var obj = {
+						inc: function(){
+							return count++;}
+					   };
+			return obj;*/
+			return {
+						inc: function(){
+							return count++;}
+					   };
+		}
+
+		var doCount = makeCounter();
+		console.log(doCount.inc());
+		console.log(doCount.inc());
+		console.log(doCount.inc());
+		console.log(doCount.inc());
+		console.log(doCount.inc());
+
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

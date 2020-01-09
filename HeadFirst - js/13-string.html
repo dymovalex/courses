@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Sting method</title>
+		<style type="text/css">
+		</style>
+		<script type="text/javascript">
+		String.prototype.palindrome = function(){
+			var match = Math.floor(this.length/2); // сколько должно быть совпадений
+			var index = 0; // сколько совпадений в итоге
+			if(!this.length%2){ // чётное количество букв
+				for (var i = 0; i < this.length/2; i++) {
+					if(this[i] === this[(this.length-1) - i]){ // сравнение первого и последнего, второго и предпоследнего...
+						index++;
+					}
+				}
+				return (index===match);
+			} else { // нечётное количество букв
+				for (var i = 0; i < (this.length-1)/2; i++) {
+					//if(i !== (this.length-1)/2){ // если не средняя буква в слове
+						if(this[i] === this[(this.length - 1) - i]){ // сравнение первого и последнего, второго и предпоследнего...
+							index++;
+						}
+					//}
+				}
+				return (index===match);
+			}
+			return false;
+		}
+
+
+
+/*		String.prototype.palindrome = function(){
+			var match = Math.floor(this.length/2); // сколько должно быть совпадений
+			var index = 0; // сколько совпадений в итоге
+			for (var i = 0; i < Math.floor((this.length-1)/2); i++) { //Если нечётное - округляем
+				if(this[i] === this[(this.length - 1) - i]){ // сравнение первого и последнего, второго и предпоследнего...
+					index++;
+				}
+				return (index===match);	
+			}
+			return false;	
+		}
+*/			
+
+
+		var str1 = "palindrome";
+		var str2 = "avatava";
+
+		if(str1.palindrome()){
+			console.log("true");
+		}else{
+			console.log("false");
+		}
+		if(str2.palindrome()){
+			console.log("true");
+		}else{
+			console.log("false");
+		}
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

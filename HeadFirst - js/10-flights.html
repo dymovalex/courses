@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title> Image Guess </title>
+		<style type="text/css">
+		</style>
+		<script type="text/javascript">
+
+		var passengers = [  { name: "Jane Doloop", paid: true, ticket: "coach" },
+					{ name: "Dr. Evel", paid: true, ticket: "firstclass" },
+					{ name: "Sue Property", paid: false, ticket: "firstclass" },
+					{ name: "John Funcall", paid: true, ticket: "premium" } ];
+
+		function processPassengers (passengers, testFunction) {
+			for (var i = 0; i < passengers.length; i++) {
+				if (testFunction(passengers[i])) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+			function checkNoFlyList(passenger){
+						return (passenger.name === "Dr. Evil");
+			}
+			function checkNotPaid (passenger) {
+					return (!passenger.paid);
+			}
+			function printPassenger (passenger) {
+				if(passenger.paid){
+					console.log(passenger.name + " have paid.");
+				} else {
+					console.log(passenger.name + " haven`t paid yet.");
+				}
+				return false;
+			}
+
+			processPassengers(passengers, printPassenger);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
