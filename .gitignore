@@ -12,5 +12,6 @@ node_modules
 
 # .gitignore itself
 #.gitignore
-vocabulary
+vocabulary.md
+journal.md
 Head-First-JavaScript-Programming-master/
