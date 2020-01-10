@@ -11,11 +11,11 @@
 
 class Group {
 	constructor(){
-		this.group = [];
+		this.members = [];
 	}
 	add (obj) {
-		this.group.push(obj);
-		return this.group;
+		this.members.push(obj);
+		return this.members;
 	}
 }
 
@@ -25,9 +25,9 @@ class GroupIterator{
 		this.index = 0;
 	}
 	next(){
-		if(this.index < this.group.length){
+		if(this.index < this.group.members.length){
 			this.index++;
-			return {value: this.group[this.index - 1], done: false};
+			return {value: this.group.members[this.index - 1], done: false};
 		}
 		return {done: true};
 	}
@@ -52,3 +52,61 @@ for (let value of Group.from(['a', 'b', 'c'])) {
 	console.log(value);
 }
 */
+
+
+class Group {
+  constructor() {
+    this.members = [];
+  }
+
+  add(value) {
+    if (!this.has(value)) {
+      this.members.push(value);
+    }
+  }
+
+  delete(value) {
+    this.members = this.members.filter(v => v !== value);
+  }
+
+  has(value) {
+    return this.members.includes(value);
+  }
+
+  static from(collection) {
+    let group = new Group;
+    for (let value of collection) {
+      group.add(value);
+    }
+    return group;
+  }
+
+  [Symbol.iterator]() {
+    return new GroupIterator(this);
+  }
+}
+
+class GroupIterator {
+  constructor(group) {
+    this.group = group;
+    this.position = 0;
+  }
+
+  next() {
+    if (this.position >= this.group.members.length) {
+      return {done: true};
+    } else {
+      let result = {value: this.group.members[this.position],
+                    done: false};
+      this.position++;
+      return result;
+    }
+  }
+}
+
+for (let value of Group.from(["a", "b", "c"])) {
+  console.log(value);
+}
+// → a
+// → b
+// → c

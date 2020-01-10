@@ -14,3 +14,10 @@ let map = {
 
 console.log(map.hasOwnProperty("one"));
 console.log(map[hasOwnProperty]);
+
+
+//Solution from book
+let map = {one: true, two: true, hasOwnProperty: true};
+
+console.log(Object.prototype.hasOwnProperty.call(map, "one"));
+// → true
