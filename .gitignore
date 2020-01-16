@@ -1,6 +1,8 @@
 # примеры Веса Боса
 WesBosExamples/
 JS30examples/
+WesBosWTFExamples/
+WesBosCSSGridExamples/
 
 # Папки .cache/, .parcel-cache/, dist/, node-modules/
 .cache
