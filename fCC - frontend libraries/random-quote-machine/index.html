@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./styles.css">
+  <title>Random Quote Machine</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://kit.fontawesome.com/0378f780cf.js" crossorigin="anonymous"></script>
+
+  <script type="text/babel">
+
+    class App extends React.Component {
+      constructor() {
+        super();
+
+        this.state = {
+          quote: '',
+          character: ''
+        }
+      }
+
+      getQuote = () => {
+        fetch('https://got-quotes.herokuapp.com/quotes')
+          .then(response => response.json())
+          .then(data => {
+            this.setState({
+              quote: data.quote,
+              character: data.character,
+            });
+          });
+      };
+
+      componentDidMount() {
+        this.getQuote();
+      }
+
+      render() {
+        const tweet = `https://twitter.com/intent/tweet?text=${this.state.quote.split(' ').join('+')}+-${this.state.character}-+@GameofThrones`;
+        return (
+          <div className="app" id="quote-box" >
+            <h1>Game of Thrones quotes</h1>
+            <div className="img-container" style={{
+              backgroundImage: `url('./assets/${this.state.character}.jpeg')`
+            }}>
+            </div>
+            <span className="quote" id="text">{this.state.quote}</span>
+            <span className="author" id="author">- {this.state.character}</span>
+            <div className="buttons">
+              <button><a href={tweet} id="tweet-quote"><i class="fab fa-twitter"></i></a></button>
+              <button onClick={this.getQuote} id="new-quote">Get quote!</button>
+            </div>
+          </div>
+
+        );
+      };
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+
+  </script>
+
+</body>
+
+</html>
